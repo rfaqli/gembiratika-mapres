@@ -1,0 +1,8 @@
+{
+  "name": "GEMBIRATIKA",
+  "description": "Platform Belajar Matematika SMP Kelas VIII Berbasis Gamifikasi Adaptif, Pembelajaran Kontekstual, dan Refleksi Regulasi Diri.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "user": {
+      "title": "User",
+      "description": "Akun pengguna GEMBIRATIKA (Siswa, Guru, Kepala Sekolah)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "ID unik pengguna" },
+        "email": { "type": "string", "format": "email", "description": "Email terdaftar" },
+        "name": { "type": "string", "description": "Nama panggilan / pseudonim siswa" },
+        "role": { "type": "string", "description": "Peran pengguna (siswa, guru, kepala_sekolah)" },
+        "classCode": { "type": "string", "description": "Kode kelas siswa" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Waktu pendaftaran" }
+      },
+      "required": ["email", "role"]
+    },
+    "session": {
+      "title": "Session",
+      "description": "Data rekaman sesi belajar 9 tahap siswa",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "ID unik sesi" },
+        "cekRasa": { "type": "string", "description": "Status rasa emosi awal (tenang, ragu, cemas)" },
+        "selectedMissionId": { "type": "string", "description": "ID misi yang diselesaikan" },
+        "calibrationScore": { "type": "number", "description": "Skor akurasi kalibrasi diri (0-100)" },
+        "journalEntry": { "type": "string", "description": "Catatan jurnal refleksi siswa" },
+        "pointsEarned": { "type": "number", "description": "Poin yang didapatkan" },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Waktu penyelesaian sesi" }
+      },
+      "required": ["selectedMissionId", "calibrationScore"]
+    },
+    "evaluation": {
+      "title": "Evaluation",
+      "description": "Hasil tes evaluasi instrumen AMAS, SRL, dan TKA",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "description": "Jenis evaluasi (amas, srl, tka)" },
+        "score": { "type": "number", "description": "Nilai skor instrumen" },
+        "studentId": { "type": "string", "description": "ID siswa yang mengerjakan" },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Waktu pengisian" }
+      },
+      "required": ["type", "score"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "Koleksi profil dan akun pengguna"
+    },
+    "/sessions/{sessionId}": {
+      "schema": "session",
+      "description": "Koleksi riwayat sesi belajar 9 tahap"
+    },
+    "/evaluations/{evalId}": {
+      "schema": "evaluation",
+      "description": "Koleksi hasil evaluasi AMAS, SRL, dan TKA"
+    }
+  }
+}
