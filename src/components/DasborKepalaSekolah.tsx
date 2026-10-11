@@ -38,14 +38,14 @@ Disusun untuk: Dinas Pendidikan & Badan Akreditasi Sekolah.
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-6 sm:space-y-8">
       {/* Header Plaque */}
-      <div className="neu-raised p-6 sm:p-8 rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="neu-raised p-5 sm:p-8 rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-5 sm:gap-6">
         <div>
-          <div className="inline-flex items-center gap-2 neu-inset-sm px-3 py-1 text-xs font-black text-[#3E78B2] uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-2 neu-inset-sm px-3 py-1 text-[10px] sm:text-xs font-black text-[#3E78B2] uppercase tracking-wider mb-2">
             <span>👨‍💼 Dasbor Eksekutif Kepala Sekolah</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-[#2A3647] font-serif">
+          <h1 className="text-xl sm:text-3xl font-black text-[#2A3647] font-serif">
             Evaluasi Dampak Program GEMBIRATIKA
           </h1>
           <p className="text-xs sm:text-sm text-[#64748B] max-w-xl">
@@ -55,7 +55,7 @@ Disusun untuk: Dinas Pendidikan & Badan Akreditasi Sekolah.
 
         <button
           onClick={downloadLaporanAkreditasi}
-          className="neu-btn-primary px-5 py-3 rounded-2xl font-black text-xs flex items-center gap-2 cursor-pointer shadow-lg"
+          className="neu-btn-primary px-5 py-3 rounded-2xl font-black text-xs flex items-center justify-center gap-2 cursor-pointer shadow-lg w-full md:w-auto active:scale-95 transition-transform"
         >
           <Download className="w-4 h-4" />
           <span>Unduh Laporan Akreditasi</span>
@@ -63,67 +63,67 @@ Disusun untuk: Dinas Pendidikan & Badan Akreditasi Sekolah.
       </div>
 
       {/* 4 Pilar Metrik Keberhasilan (PRD Bab 4) with Neumorphic Volume */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
         {/* Metrik 1: AMAS <= 20 */}
-        <div className="neu-raised p-6 rounded-3xl space-y-2">
+        <div className="neu-raised p-4 sm:p-6 rounded-3xl space-y-2">
           <div className="flex items-center justify-between text-xs text-[#8494A8]">
-            <span className="font-bold">Peserta AMAS &le; 20</span>
-            <span className="text-[#3F8F54] font-black flex items-center text-[11px]">
-              <ArrowDownRight className="w-3.5 h-3.5" /> -42% Cemas
+            <span className="font-bold text-[11px] sm:text-xs">AMAS &le; 20</span>
+            <span className="text-[#3F8F54] font-black flex items-center text-[10px] sm:text-[11px]">
+              <ArrowDownRight className="w-3.5 h-3.5" /> -42%
             </span>
           </div>
-          <div className="text-3xl font-black text-[#3F8F54] font-serif">82%</div>
-          <div className="text-[11px] text-[#64748B] font-bold">
+          <div className="text-2xl sm:text-3xl font-black text-[#3F8F54] font-serif">82%</div>
+          <div className="text-[10px] sm:text-[11px] text-[#64748B] font-bold">
             Target &ge;80% Tercapai (Baseline: 28%)
           </div>
         </div>
 
         {/* Metrik 2: Rerata TKA */}
-        <div className="neu-raised p-6 rounded-3xl space-y-2">
+        <div className="neu-raised p-4 sm:p-6 rounded-3xl space-y-2">
           <div className="flex items-center justify-between text-xs text-[#8494A8]">
-            <span className="font-bold">Rerata Tryout TKA</span>
-            <span className="text-[#3F8F54] font-black flex items-center text-[11px]">
+            <span className="font-bold text-[11px] sm:text-xs">Rerata TKA</span>
+            <span className="text-[#3F8F54] font-black flex items-center text-[10px] sm:text-[11px]">
               <ArrowUpRight className="w-3.5 h-3.5" /> +28.36
             </span>
           </div>
-          <div className="text-3xl font-black text-[#2A3647] font-serif">68.70</div>
-          <div className="text-[11px] text-[#64748B] font-bold">
+          <div className="text-2xl sm:text-3xl font-black text-[#2A3647] font-serif">68.70</div>
+          <div className="text-[10px] sm:text-[11px] text-[#64748B] font-bold">
             Naik 70.3% dari Baseline (40.34)
           </div>
         </div>
 
         {/* Metrik 3: Rerata SRL */}
-        <div className="neu-raised p-6 rounded-3xl space-y-2">
+        <div className="neu-raised p-4 sm:p-6 rounded-3xl space-y-2">
           <div className="flex items-center justify-between text-xs text-[#8494A8]">
-            <span className="font-bold">Kemandirian (SRL)</span>
-            <span className="text-[#3F8F54] font-black flex items-center text-[11px]">
+            <span className="font-bold text-[11px] sm:text-xs">Kemandirian</span>
+            <span className="text-[#3F8F54] font-black flex items-center text-[10px] sm:text-[11px]">
               <ArrowUpRight className="w-3.5 h-3.5" /> +53.3%
             </span>
           </div>
-          <div className="text-3xl font-black text-[#8C6D42] font-serif">78.5 / 100</div>
-          <div className="text-[11px] text-[#64748B] font-bold">
+          <div className="text-2xl sm:text-3xl font-black text-[#8C6D42] font-serif">78.5 / 100</div>
+          <div className="text-[10px] sm:text-[11px] text-[#64748B] font-bold">
             Kenaikan metakognisi mandiri
           </div>
         </div>
 
         {/* Metrik 4: Kalibrasi Diri */}
-        <div className="neu-raised p-6 rounded-3xl space-y-2">
+        <div className="neu-raised p-4 sm:p-6 rounded-3xl space-y-2">
           <div className="flex items-center justify-between text-xs text-[#8494A8]">
-            <span className="font-bold">Akurasi Kalibrasi</span>
-            <span className="text-[#3F8F54] font-black flex items-center text-[11px]">
+            <span className="font-bold text-[11px] sm:text-xs">Akurasi Diri</span>
+            <span className="text-[#3F8F54] font-black flex items-center text-[10px] sm:text-[11px]">
               <ArrowUpRight className="w-3.5 h-3.5" /> +35%
             </span>
           </div>
-          <div className="text-3xl font-black text-[#FFA726] font-serif">84.2%</div>
-          <div className="text-[11px] text-[#64748B] font-bold">
-            Overconfidence &amp; keraguan mengecil
+          <div className="text-2xl sm:text-3xl font-black text-[#FFA726] font-serif">84.2%</div>
+          <div className="text-[10px] sm:text-[11px] text-[#64748B] font-bold">
+            Overconfidence mengecil
           </div>
         </div>
       </div>
 
       {/* Tabel Perbandingan Agregat Kelas VIII */}
-      <section className="neu-raised p-6 sm:p-8 rounded-3xl space-y-4">
-        <h2 className="text-lg font-black text-[#2A3647] flex items-center gap-2 font-serif">
+      <section className="neu-raised p-5 sm:p-8 rounded-3xl space-y-4">
+        <h2 className="text-base sm:text-lg font-black text-[#2A3647] flex items-center gap-2 font-serif">
           <BarChart3 className="w-5 h-5 text-[#3E78B2]" />
           Rekap Agregat per Kelas Paralel (160 Siswa)
         </h2>

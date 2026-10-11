@@ -24,7 +24,7 @@ export default function App() {
         <Navigation />
 
         {/* Main Content Router */}
-        <main className="flex-1 pb-16">
+        <main className="flex-1 pb-28 sm:pb-24 lg:pb-16">
           {currentPage === 'beranda' && <BerandaSiswa />}
           {currentPage === 'sesi' && <SesiBelajar9Tahap />}
           {currentPage === 'peta' && <PetaPetualangan />}
@@ -47,7 +47,7 @@ export default function App() {
       </div>
 
       {/* Soft Neumorphic Footer */}
-      <footer className="border-t border-white/60 py-8 text-xs text-[#64748B]">
+      <footer className="border-t border-white/60 py-8 mb-20 lg:mb-0 text-xs text-[#64748B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">

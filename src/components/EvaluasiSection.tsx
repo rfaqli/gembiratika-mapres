@@ -64,77 +64,77 @@ export function EvaluasiSection() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+    <div className="max-w-4xl mx-auto px-3 sm:px-4 py-5 sm:py-8 space-y-6 sm:space-y-8">
       {/* Header Plaque */}
-      <div className="neu-raised p-6 sm:p-8 rounded-3xl space-y-4">
+      <div className="neu-raised p-5 sm:p-8 rounded-3xl space-y-4">
         <div className="flex items-center gap-3">
-          <div className="neu-circle-btn w-12 h-12 text-2xl text-[#3F8F54]">📝</div>
+          <div className="neu-circle-btn w-12 h-12 text-2xl text-[#3F8F54] shrink-0">📝</div>
           <div>
-            <h1 className="text-2xl sm:text-3xl font-black text-[#2A3647] font-serif">
+            <h1 className="text-xl sm:text-3xl font-black text-[#2A3647] font-serif">
               Instrumen Evaluasi Ilmiah GEMBIRATIKA
             </h1>
-            <p className="text-xs text-[#64748B]">
+            <p className="text-[11px] sm:text-xs text-[#64748B]">
               Pengukuran dampak terstandarisasi untuk penurunan kecemasan (AMAS) dan kemandirian belajar (SRL).
             </p>
           </div>
         </div>
 
         {/* Tab Switcher with Extruded / Inset Pills */}
-        <div className="flex items-center gap-2 pt-2 border-t border-[#DCE4ED] overflow-x-auto text-xs font-black">
+        <div className="flex items-center gap-2 pt-2 border-t border-[#DCE4ED] overflow-x-auto flex-nowrap py-1 text-xs font-black">
           <button
             onClick={() => setActiveTab('amas')}
-            className={`px-4 py-2.5 rounded-2xl transition cursor-pointer ${
+            className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-2xl transition cursor-pointer shrink-0 active:scale-95 ${
               activeTab === 'amas'
                 ? 'neu-inset text-[#3F8F54]'
                 : 'neu-btn text-[#64748B] hover:text-[#2A3647]'
             }`}
           >
-            1. Kuesioner AMAS (Kecemasan)
+            1. Kuesioner AMAS
           </button>
           <button
             onClick={() => setActiveTab('srl')}
-            className={`px-4 py-2.5 rounded-2xl transition cursor-pointer ${
+            className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-2xl transition cursor-pointer shrink-0 active:scale-95 ${
               activeTab === 'srl'
                 ? 'neu-inset text-[#3F8F54]'
                 : 'neu-btn text-[#64748B] hover:text-[#2A3647]'
             }`}
           >
-            2. Kuesioner SRL (Kemandirian Belajar)
+            2. Kuesioner SRL
           </button>
           <button
             onClick={() => setActiveTab('tka')}
-            className={`px-4 py-2.5 rounded-2xl transition cursor-pointer ${
+            className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-2xl transition cursor-pointer shrink-0 active:scale-95 ${
               activeTab === 'tka'
                 ? 'neu-inset text-[#3F8F54]'
                 : 'neu-btn text-[#64748B] hover:text-[#2A3647]'
             }`}
           >
-            3. Info Tryout TKA Matematika
+            3. Info Tryout TKA
           </button>
         </div>
       </div>
 
       {/* ---------------- TAB 1: KUESIONER AMAS ---------------- */}
       {activeTab === 'amas' && (
-        <div className="neu-raised p-6 sm:p-8 rounded-3xl space-y-6">
+        <div className="neu-raised p-5 sm:p-8 rounded-3xl space-y-5 sm:space-y-6">
           <div className="space-y-1">
-            <span className="neu-inset-sm px-2.5 py-0.5 text-[10px] font-black text-[#8C6D42] uppercase tracking-wider inline-block">
+            <span className="neu-inset-sm px-2.5 py-0.5 text-[9px] sm:text-[10px] font-black text-[#8C6D42] uppercase tracking-wider inline-block">
               Abbreviated Math Anxiety Scale (AMAS)
             </span>
-            <h2 className="text-xl font-black text-[#2A3647] font-serif">
+            <h2 className="text-lg sm:text-xl font-black text-[#2A3647] font-serif">
               Pengukuran Tingkat Kecemasan Matematika (9 Item)
             </h2>
-            <p className="text-xs text-[#64748B]">
+            <p className="text-[11px] sm:text-xs text-[#64748B]">
               Pilih nilai 1 (Sangat Tenang) hingga 5 (Sangat Tegang). 
               Rentang skor 9–45. <strong>Makin rendah skor, makin tenang!</strong>
             </p>
           </div>
 
           {amasSubmitted ? (
-            <div className="neu-inset p-8 rounded-3xl text-center space-y-3">
+            <div className="neu-inset p-6 sm:p-8 rounded-3xl text-center space-y-3">
               <span className="text-4xl block">🌱</span>
               <h3 className="text-xl font-black text-[#3F8F54]">Hasil Evaluasi AMAS Tersimpan!</h3>
-              <div className="text-3xl font-black text-[#2A3647] font-serif">
+              <div className="text-2xl sm:text-3xl font-black text-[#2A3647] font-serif">
                 Skor Anda: {calculateAmasTotal()} / 45
               </div>
               <p className="text-xs text-[#64748B] max-w-md mx-auto leading-relaxed">
@@ -150,18 +150,18 @@ export function EvaluasiSection() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleAmasSubmit} className="space-y-6">
-              <div className="space-y-4">
+            <form onSubmit={handleAmasSubmit} className="space-y-5 sm:space-y-6">
+              <div className="space-y-3.5 sm:space-y-4">
                 {AMAS_QUESTIONS.map((q, idx) => (
-                  <div key={q.id} className="neu-btn p-5 rounded-2xl space-y-3 text-xs">
-                    <p className="font-bold text-[#2A3647]">
+                  <div key={q.id} className="neu-btn p-3.5 sm:p-5 rounded-2xl space-y-2.5 sm:space-y-3 text-xs">
+                    <p className="font-bold text-[#2A3647] text-xs sm:text-sm">
                       {idx + 1}. {q.text}
                     </p>
-                    <div className="grid grid-cols-5 gap-2 text-center">
+                    <div className="grid grid-cols-5 gap-1.5 sm:gap-2 text-center">
                       {[1, 2, 3, 4, 5].map(val => (
                         <label
                           key={val}
-                          className={`p-3 rounded-2xl cursor-pointer font-black transition flex flex-col items-center gap-1 ${
+                          className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl cursor-pointer font-black transition flex flex-col items-center gap-1 active:scale-95 ${
                             amasResponses[q.id] === val
                               ? 'neu-inset text-[#3F8F54]'
                               : 'neu-btn text-[#64748B] hover:text-[#2A3647]'
@@ -175,13 +175,13 @@ export function EvaluasiSection() {
                             onChange={() => setAmasResponses(prev => ({ ...prev, [q.id]: val }))}
                             className="hidden"
                           />
-                          <span className="text-sm">{val}</span>
-                          <span className="text-[9px] font-medium leading-tight hidden sm:inline">
-                            {val === 1 && 'Sangat Tidak'}
-                            {val === 2 && 'Tidak'}
+                          <span className="text-xs sm:text-sm">{val}</span>
+                          <span className="text-[8px] sm:text-[9px] font-medium leading-tight hidden xs:inline">
+                            {val === 1 && 'Tenang'}
+                            {val === 2 && 'Santai'}
                             {val === 3 && 'Ragu'}
-                            {val === 4 && 'Setuju'}
-                            {val === 5 && 'Sangat Setuju'}
+                            {val === 4 && 'Cemas'}
+                            {val === 5 && 'Tegang'}
                           </span>
                         </label>
                       ))}
@@ -190,13 +190,13 @@ export function EvaluasiSection() {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between pt-2">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
                 <span className="text-xs text-[#64748B]">
                   Total Skor Sementara: <strong className="text-[#2A3647]">{calculateAmasTotal()} / 45</strong>
                 </span>
                 <button
                   type="submit"
-                  className="neu-btn-primary px-6 py-3 rounded-2xl font-black text-xs"
+                  className="neu-btn-primary w-full sm:w-auto px-6 py-3 rounded-2xl font-black text-xs active:scale-95 transition-transform"
                 >
                   Simpan Evaluasi AMAS
                 </button>
@@ -208,24 +208,24 @@ export function EvaluasiSection() {
 
       {/* ---------------- TAB 2: KUESIONER SRL ---------------- */}
       {activeTab === 'srl' && (
-        <div className="neu-raised p-6 sm:p-8 rounded-3xl space-y-6">
+        <div className="neu-raised p-5 sm:p-8 rounded-3xl space-y-5 sm:space-y-6">
           <div className="space-y-1">
-            <span className="neu-inset-sm px-2.5 py-0.5 text-[10px] font-black text-[#8C6D42] uppercase tracking-wider inline-block">
+            <span className="neu-inset-sm px-2.5 py-0.5 text-[9px] sm:text-[10px] font-black text-[#8C6D42] uppercase tracking-wider inline-block">
               Self-Regulated Learning (SRL - MSLQ Subscale)
             </span>
-            <h2 className="text-xl font-black text-[#2A3647] font-serif">
+            <h2 className="text-lg sm:text-xl font-black text-[#2A3647] font-serif">
               Pengukuran Kemandirian Belajar Matematika (8 Item)
             </h2>
-            <p className="text-xs text-[#64748B]">
+            <p className="text-[11px] sm:text-xs text-[#64748B]">
               Mengukur 4 dimensi: Perencanaan, Monitoring, Regulasi, dan Refleksi.
             </p>
           </div>
 
           {srlSubmitted ? (
-            <div className="neu-inset p-8 rounded-3xl text-center space-y-3">
+            <div className="neu-inset p-6 sm:p-8 rounded-3xl text-center space-y-3">
               <span className="text-4xl block">🪞</span>
               <h3 className="text-xl font-black text-[#3F8F54]">Hasil Evaluasi SRL Tersimpan!</h3>
-              <div className="text-3xl font-black text-[#2A3647] font-serif">
+              <div className="text-2xl sm:text-3xl font-black text-[#2A3647] font-serif">
                 Skor Kemandirian: {calculateSrlTotal()}%
               </div>
               <p className="text-xs text-[#64748B] max-w-md mx-auto leading-relaxed">
@@ -239,23 +239,23 @@ export function EvaluasiSection() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSrlSubmit} className="space-y-6">
-              <div className="space-y-4">
+            <form onSubmit={handleSrlSubmit} className="space-y-5 sm:space-y-6">
+              <div className="space-y-3.5 sm:space-y-4">
                 {SRL_QUESTIONS.map((q, idx) => (
-                  <div key={q.id} className="neu-btn p-5 rounded-2xl space-y-3 text-xs">
+                  <div key={q.id} className="neu-btn p-3.5 sm:p-5 rounded-2xl space-y-2.5 sm:space-y-3 text-xs">
                     <div className="flex items-center justify-between">
-                      <span className="neu-inset-sm px-2.5 py-0.5 text-[#8C6D42] font-black text-[10px]">
+                      <span className="neu-inset-sm px-2.5 py-0.5 text-[#8C6D42] font-black text-[9px] sm:text-[10px]">
                         Dimensi: {q.dimension}
                       </span>
                     </div>
-                    <p className="font-bold text-[#2A3647]">
+                    <p className="font-bold text-[#2A3647] text-xs sm:text-sm">
                       {idx + 1}. {q.text}
                     </p>
-                    <div className="grid grid-cols-5 gap-2 text-center">
+                    <div className="grid grid-cols-5 gap-1.5 sm:gap-2 text-center">
                       {[1, 2, 3, 4, 5].map(val => (
                         <label
                           key={val}
-                          className={`p-3 rounded-2xl cursor-pointer font-black transition flex flex-col items-center gap-1 ${
+                          className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl cursor-pointer font-black transition flex flex-col items-center gap-1 active:scale-95 ${
                             srlResponses[q.id] === val
                               ? 'neu-inset text-[#3F8F54]'
                               : 'neu-btn text-[#64748B] hover:text-[#2A3647]'
@@ -269,9 +269,9 @@ export function EvaluasiSection() {
                             onChange={() => setSrlResponses(prev => ({ ...prev, [q.id]: val }))}
                             className="hidden"
                           />
-                          <span className="text-sm">{val}</span>
-                          <span className="text-[9px] font-medium leading-tight hidden sm:inline">
-                            {val === 1 && 'Tidak Pernah'}
+                          <span className="text-xs sm:text-sm">{val}</span>
+                          <span className="text-[8px] sm:text-[9px] font-medium leading-tight hidden xs:inline">
+                            {val === 1 && 'Tak Pernah'}
                             {val === 2 && 'Jarang'}
                             {val === 3 && 'Kadang'}
                             {val === 4 && 'Sering'}
@@ -284,13 +284,13 @@ export function EvaluasiSection() {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between pt-2">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
                 <span className="text-xs text-[#64748B]">
                   Indeks SRL: <strong className="text-[#2A3647]">{calculateSrlTotal()}%</strong>
                 </span>
                 <button
                   type="submit"
-                  className="neu-btn-primary px-6 py-3 rounded-2xl font-black text-xs"
+                  className="neu-btn-primary w-full sm:w-auto px-6 py-3 rounded-2xl font-black text-xs active:scale-95 transition-transform"
                 >
                   Simpan Evaluasi SRL
                 </button>

@@ -40,14 +40,14 @@ Diterbitkan oleh Tim Pengembang GEMBIRATIKA.
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8 space-y-8">
+    <div className="max-w-5xl mx-auto px-3 sm:px-4 py-5 sm:py-8 space-y-6 sm:space-y-8">
       {/* Header Plaque */}
-      <div className="neu-raised p-6 sm:p-8 rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="neu-raised p-5 sm:p-8 rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-5 sm:gap-6">
         <div>
-          <div className="inline-flex items-center gap-2 neu-inset-sm px-3 py-1 text-xs font-black text-[#8C6D42] uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-2 neu-inset-sm px-3 py-1 text-[10px] sm:text-xs font-black text-[#8C6D42] uppercase tracking-wider mb-2">
             <span>📖 Dokumen Resmi Kemendikbudristek Compliant</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-[#2A3647] font-serif">
+          <h1 className="text-xl sm:text-3xl font-black text-[#2A3647] font-serif">
             Buku Pedoman Guru Digital
           </h1>
           <p className="text-xs sm:text-sm text-[#64748B] max-w-xl">
@@ -57,7 +57,7 @@ Diterbitkan oleh Tim Pengembang GEMBIRATIKA.
 
         <button
           onClick={downloadPedoman}
-          className="neu-btn-primary px-5 py-3 rounded-2xl font-black text-xs flex items-center gap-2 cursor-pointer shadow-lg"
+          className="neu-btn-primary px-5 py-3 rounded-2xl font-black text-xs flex items-center justify-center gap-2 cursor-pointer shadow-lg w-full md:w-auto active:scale-95 transition-transform"
         >
           <Download className="w-4 h-4" />
           <span>Unduh Pedoman Digital (PDF)</span>
@@ -65,37 +65,39 @@ Diterbitkan oleh Tim Pengembang GEMBIRATIKA.
       </div>
 
       {/* Main Reader View */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Daftar Bab Sidebar */}
-        <div className="neu-raised p-5 rounded-3xl space-y-3 h-fit">
-          <span className="text-[11px] font-black text-[#8494A8] uppercase tracking-wider block px-2 pb-1">
-            Daftar Bab Pedoman
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        {/* Daftar Bab Sidebar (Horizontal pills on mobile, Vertical list on desktop) */}
+        <div className="neu-raised p-4 sm:p-5 rounded-3xl space-y-2 sm:space-y-3 h-fit">
+          <span className="text-[10px] sm:text-[11px] font-black text-[#8494A8] uppercase tracking-wider block px-1 sm:px-2 pb-1">
+            Pilih Bab Pedoman:
           </span>
 
-          {[
-            { id: 1, title: 'Bab 1: Memutus Lingkaran Math Anxiety' },
-            { id: 2, title: 'Bab 2: Manajemen Jam Belajar 9 Tahap' },
-            { id: 3, title: 'Bab 3: 4 Paket Konteks Kehidupan Nyata' },
-            { id: 4, title: 'Bab 4: Membaca Meter Kalibrasi & Bedah Salah' },
-            { id: 5, title: 'Bab 5: Diferensiasi & Remedial Prasyarat' }
-          ].map(bab => (
-            <button
-              key={bab.id}
-              onClick={() => setSelectedBab(bab.id)}
-              className={`w-full text-left p-3.5 rounded-2xl text-xs font-black transition flex items-center justify-between cursor-pointer ${
-                selectedBab === bab.id
-                  ? 'neu-inset text-[#3F8F54]'
-                  : 'neu-btn text-[#4C5B70] hover:text-[#2A3647]'
-              }`}
-            >
-              <span>{bab.title}</span>
-              <ChevronRight className="w-4 h-4 opacity-60" />
-            </button>
-          ))}
+          <div className="flex md:flex-col gap-2 overflow-x-auto pb-1 md:pb-0">
+            {[
+              { id: 1, title: 'Bab 1: Memutus Math Anxiety' },
+              { id: 2, title: 'Bab 2: Manajemen 9 Tahap' },
+              { id: 3, title: 'Bab 3: 4 Paket Konteks Nyata' },
+              { id: 4, title: 'Bab 4: Meter Kalibrasi & Bedah Salah' },
+              { id: 5, title: 'Bab 5: Diferensiasi & Remedial' }
+            ].map(bab => (
+              <button
+                key={bab.id}
+                onClick={() => setSelectedBab(bab.id)}
+                className={`text-left p-3 sm:p-3.5 rounded-2xl text-xs font-black transition flex items-center justify-between cursor-pointer shrink-0 md:shrink md:w-full active:scale-95 ${
+                  selectedBab === bab.id
+                    ? 'neu-inset text-[#3F8F54]'
+                    : 'neu-btn text-[#4C5B70] hover:text-[#2A3647]'
+                }`}
+              >
+                <span className="truncate">{bab.title}</span>
+                <ChevronRight className="w-4 h-4 opacity-60 hidden md:block shrink-0 ml-1" />
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Isi Bab Content */}
-        <div className="md:col-span-2 neu-raised p-6 sm:p-8 rounded-3xl space-y-5">
+        <div className="md:col-span-2 neu-raised p-5 sm:p-8 rounded-3xl space-y-4 sm:space-y-5">
           {selectedBab === 1 && (
             <div className="space-y-4 text-xs text-[#475569] leading-relaxed">
               <span className="neu-inset-sm px-2.5 py-0.5 text-[10px] font-black text-[#3F8F54] uppercase tracking-wider inline-block">

@@ -48,14 +48,14 @@ export function DasborGuru() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-6 sm:space-y-8">
       {/* Header Plaque */}
-      <div className="neu-raised p-6 sm:p-8 rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="neu-raised p-5 sm:p-8 rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-5 sm:gap-6">
         <div>
-          <div className="inline-flex items-center gap-2 neu-inset-sm px-3 py-1 text-xs font-black text-[#8C6D42] uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-2 neu-inset-sm px-3 py-1 text-[10px] sm:text-xs font-black text-[#8C6D42] uppercase tracking-wider mb-2">
             <span>👩‍🏫 Dasbor Pendidik Matematika</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-[#2A3647] font-serif">
+          <h1 className="text-xl sm:text-3xl font-black text-[#2A3647] font-serif">
             Pemantauan Kelas VIII-A SMP Gemilang
           </h1>
           <p className="text-xs sm:text-sm text-[#64748B] max-w-xl">
@@ -63,10 +63,10 @@ export function DasborGuru() {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full md:w-auto">
           <button
             onClick={() => setShowAssignModal(true)}
-            className="neu-btn-primary px-5 py-3 rounded-2xl font-black text-xs flex items-center gap-2 cursor-pointer shadow-lg"
+            className="neu-btn-primary px-5 py-3 rounded-2xl font-black text-xs flex items-center justify-center gap-2 cursor-pointer shadow-lg active:scale-95 transition-transform"
           >
             <Send className="w-4 h-4" />
             <span>Tugaskan Misi Baru</span>
@@ -74,7 +74,7 @@ export function DasborGuru() {
 
           <button
             onClick={exportCSV}
-            className="neu-btn px-4 py-3 rounded-2xl font-black text-xs text-[#2A3647] flex items-center gap-2 cursor-pointer shadow-sm hover:translate-y-[-1px] transition-transform"
+            className="neu-btn px-4 py-3 rounded-2xl font-black text-xs text-[#2A3647] flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:translate-y-[-1px] active:scale-95 transition-transform"
           >
             <Download className="w-4 h-4" />
             <span>Ekspor CSV</span>
@@ -83,46 +83,46 @@ export function DasborGuru() {
       </div>
 
       {/* 4 Kartu Metrik Kelas Sekilas */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="neu-raised p-5 rounded-3xl space-y-1">
-          <span className="text-xs font-bold text-[#8494A8] block">Total Siswa Aktif</span>
-          <span className="text-2xl font-black text-[#2A3647] font-serif">40 Siswa</span>
-          <span className="text-[11px] text-[#3F8F54] font-bold block">100% Ikuti Siklus SRL</span>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
+        <div className="neu-raised p-4 sm:p-5 rounded-3xl space-y-1">
+          <span className="text-[11px] sm:text-xs font-bold text-[#8494A8] block">Total Siswa Aktif</span>
+          <span className="text-xl sm:text-2xl font-black text-[#2A3647] font-serif">40 Siswa</span>
+          <span className="text-[10px] sm:text-[11px] text-[#3F8F54] font-bold block">100% Ikuti Siklus SRL</span>
         </div>
 
-        <div className="neu-raised p-5 rounded-3xl space-y-1">
-          <span className="text-xs font-bold text-[#8494A8] block">Rerata AMAS (Kecemasan)</span>
-          <span className="text-2xl font-black text-[#3F8F54] font-serif">19.2 / 45</span>
-          <span className="text-[11px] text-[#3F8F54] font-bold block">Target tercapai (&lt;20)</span>
+        <div className="neu-raised p-4 sm:p-5 rounded-3xl space-y-1">
+          <span className="text-[11px] sm:text-xs font-bold text-[#8494A8] block">Rerata AMAS (Cemas)</span>
+          <span className="text-xl sm:text-2xl font-black text-[#3F8F54] font-serif">19.2 / 45</span>
+          <span className="text-[10px] sm:text-[11px] text-[#3F8F54] font-bold block">Target tercapai (&lt;20)</span>
         </div>
 
-        <div className="neu-raised p-5 rounded-3xl space-y-1">
-          <span className="text-xs font-bold text-[#8494A8] block">Rerata Kalibrasi Diri</span>
-          <span className="text-2xl font-black text-[#FFA726] font-serif">81.4%</span>
-          <span className="text-[11px] text-[#64748B] block">Metakognisi berkembang</span>
+        <div className="neu-raised p-4 sm:p-5 rounded-3xl space-y-1">
+          <span className="text-[11px] sm:text-xs font-bold text-[#8494A8] block">Rerata Kalibrasi</span>
+          <span className="text-xl sm:text-2xl font-black text-[#FFA726] font-serif">81.4%</span>
+          <span className="text-[10px] sm:text-[11px] text-[#64748B] block">Metakognisi tumbuh</span>
         </div>
 
-        <div className="neu-raised p-5 rounded-3xl space-y-1">
-          <span className="text-xs font-bold text-[#8494A8] block">Miskonsepsi Utama</span>
-          <span className="text-base font-black text-[#8C6D42] block">Konversi Satuan m³</span>
-          <span className="text-[11px] text-[#FF7043] font-bold block">Perlu pendampingan</span>
+        <div className="neu-raised p-4 sm:p-5 rounded-3xl space-y-1">
+          <span className="text-[11px] sm:text-xs font-bold text-[#8494A8] block">Miskonsepsi Utama</span>
+          <span className="text-sm sm:text-base font-black text-[#8C6D42] block truncate">Konversi m³</span>
+          <span className="text-[10px] sm:text-[11px] text-[#FF7043] font-bold block">Perlu pendampingan</span>
         </div>
       </div>
 
       {/* Heatmap Pola Kesalahan / Miskonsepsi per Konsep */}
-      <section className="neu-raised p-6 sm:p-8 rounded-3xl space-y-5">
+      <section className="neu-raised p-5 sm:p-8 rounded-3xl space-y-4 sm:space-y-5">
         <div>
-          <h2 className="text-lg font-black text-[#2A3647] flex items-center gap-2 font-serif">
+          <h2 className="text-base sm:text-lg font-black text-[#2A3647] flex items-center gap-2 font-serif">
             <BarChart3 className="w-5 h-5 text-[#8C6D42]" />
             Heatmap Pola Kesalahan &amp; Miskonsepsi Konsep
           </h2>
-          <p className="text-xs text-[#64748B]">
+          <p className="text-[11px] sm:text-xs text-[#64748B]">
             Analisis kategori kesalahan di tahap Bedah Salah untuk merancang strategi pengajaran yang tepat sasaran.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs">
-          <div className="neu-btn p-4 rounded-2xl space-y-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 text-xs">
+          <div className="neu-btn p-3.5 sm:p-4 rounded-2xl space-y-2">
             <div className="flex items-center justify-between font-black">
               <span>Pola Bilangan</span>
               <span className="text-[#3F8F54]">8% Keliru</span>
@@ -133,7 +133,7 @@ export function DasborGuru() {
             <span className="text-[10px] text-[#64748B] block">Akar: Salah hitung cepat</span>
           </div>
 
-          <div className="neu-btn p-4 rounded-2xl space-y-2">
+          <div className="neu-btn p-3.5 sm:p-4 rounded-2xl space-y-2">
             <div className="flex items-center justify-between font-black">
               <span>Aljabar &amp; Persamaan</span>
               <span className="text-[#FFA726]">24% Keliru</span>
@@ -144,7 +144,7 @@ export function DasborGuru() {
             <span className="text-[10px] text-[#64748B] block">Akar: Belum paham variabel</span>
           </div>
 
-          <div className="neu-btn p-4 rounded-2xl space-y-2">
+          <div className="neu-btn p-3.5 sm:p-4 rounded-2xl space-y-2">
             <div className="flex items-center justify-between font-black">
               <span>Teorema Pythagoras</span>
               <span className="text-[#3F8F54]">12% Keliru</span>
@@ -155,7 +155,7 @@ export function DasborGuru() {
             <span className="text-[10px] text-[#64748B] block">Akar: Lupa akar kuadrat</span>
           </div>
 
-          <div className="neu-btn p-4 rounded-2xl space-y-2">
+          <div className="neu-btn p-3.5 sm:p-4 rounded-2xl space-y-2">
             <div className="flex items-center justify-between font-black">
               <span>Bangun Ruang (Balok)</span>
               <span className="text-[#FF7043]">38% Keliru</span>
@@ -168,27 +168,27 @@ export function DasborGuru() {
         </div>
       </section>
 
-      {/* Tabel Kemajuan Siswa */}
-      <section className="neu-raised p-6 sm:p-8 rounded-3xl space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      {/* Daftar Kemajuan Siswa */}
+      <section className="neu-raised p-5 sm:p-8 rounded-3xl space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           <div>
-            <h2 className="text-lg font-black text-[#2A3647] flex items-center gap-2 font-serif">
+            <h2 className="text-base sm:text-lg font-black text-[#2A3647] flex items-center gap-2 font-serif">
               <Users className="w-5 h-5 text-[#3F8F54]" />
               Daftar Kemajuan Siswa (Kelas VIII-A)
             </h2>
-            <p className="text-xs text-[#64748B]">
-              Klik pada baris siswa untuk melihat rincian jurnal refleksi dan evaluasi
+            <p className="text-[11px] sm:text-xs text-[#64748B]">
+              Klik pada baris atau kartu siswa untuk melihat rincian jurnal refleksi dan evaluasi
             </p>
           </div>
 
           {/* Filter Rasa with Neumorphic Dropdown */}
           <div className="flex items-center gap-2 text-xs">
-            <Filter className="w-4 h-4 text-[#8494A8]" />
-            <span className="text-[#8494A8] font-bold">Filter Rasa:</span>
+            <Filter className="w-4 h-4 text-[#8494A8] shrink-0" />
+            <span className="text-[#8494A8] font-bold shrink-0">Filter Rasa:</span>
             <select
               value={filterRasa}
               onChange={e => setFilterRasa(e.target.value)}
-              className="neu-btn px-3 py-1.5 text-xs font-black text-[#2A3647] focus:outline-none"
+              className="neu-btn px-3 py-1.5 text-xs font-black text-[#2A3647] focus:outline-none w-full sm:w-auto"
             >
               <option value="all">Semua Status</option>
               <option value="tenang">😊 Tenang</option>
@@ -198,8 +198,69 @@ export function DasborGuru() {
           </div>
         </div>
 
-        {/* Tabel Data */}
-        <div className="overflow-x-auto">
+        {/* Mobile View: Dedicated Neumorphic Cards (Clean, readable on narrow screens!) */}
+        <div className="sm:hidden space-y-3">
+          {filteredStudents.map(siswa => (
+            <div 
+              key={siswa.id}
+              onClick={() => setSelectedSiswa(siswa)}
+              className="neu-btn p-4 rounded-2xl space-y-3 cursor-pointer active:scale-[0.98] transition-transform"
+            >
+              <div className="flex items-center justify-between gap-2 border-b border-[#DCE4ED] pb-2.5">
+                <div>
+                  <h4 className="text-sm font-black text-[#2A3647]">{siswa.pseudonim}</h4>
+                  <span className="text-[10px] text-[#8494A8]">{siswa.namaLengkap}</span>
+                </div>
+                <div>
+                  {siswa.statusCekRasa === 'tenang' && (
+                    <span className="neu-inset-sm px-2.5 py-1 text-[11px] text-[#3F8F54] font-black inline-flex items-center gap-1">
+                      😊 Tenang
+                    </span>
+                  )}
+                  {siswa.statusCekRasa === 'ragu' && (
+                    <span className="neu-inset-sm px-2.5 py-1 text-[11px] text-[#FFA726] font-black inline-flex items-center gap-1">
+                      😐 Ragu
+                    </span>
+                  )}
+                  {siswa.statusCekRasa === 'cemas' && (
+                    <span className="neu-inset-sm px-2.5 py-1 text-[11px] text-[#FF7043] font-black inline-flex items-center gap-1">
+                      😰 Cemas
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                <div className="neu-inset-sm p-2 rounded-xl">
+                  <span className="text-[9px] text-[#8494A8] block">Misi</span>
+                  <span className="font-black text-[#3F8F54]">{siswa.misiSelesai}</span>
+                </div>
+                <div className="neu-inset-sm p-2 rounded-xl">
+                  <span className="text-[9px] text-[#8494A8] block">Kalibrasi</span>
+                  <span className="font-black text-[#FFA726]">{siswa.indeksKalibrasi}%</span>
+                </div>
+                <div className="neu-inset-sm p-2 rounded-xl">
+                  <span className="text-[9px] text-[#8494A8] block">AMAS</span>
+                  <span className={`font-black ${siswa.skorAmas <= 20 ? 'text-[#3F8F54]' : 'text-[#FF7043]'}`}>
+                    {siswa.skorAmas}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between text-[11px] pt-1">
+                <span className="text-[#64748B] truncate max-w-[200px]">
+                  Fokus: <strong>{siswa.polaSalahUtama}</strong>
+                </span>
+                <span className="text-[#3F8F54] font-black inline-flex items-center gap-1">
+                  <Eye className="w-3.5 h-3.5" /> Rincian
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Tablet & Desktop View: Table Data with Smooth Horizontal Scroll */}
+        <div className="hidden sm:block overflow-x-auto">
           <table className="w-full text-left text-xs border-collapse">
             <thead>
               <tr className="border-b border-[#DCE4ED] text-[#8494A8] font-bold uppercase tracking-wider text-[10px]">
