@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50" />
+      <stop offset="100%" stop-color="#2E7D32" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Background with Soft Shadow -->
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Inner Soft Bevel Highlight -->
+  <rect x="5" y="5" width="54" height="54" rx="15" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.35" />
+
+  <!-- Obelus Symbol (÷) -->
+  <g filter="url(#softShadow)">
+    <!-- Top Dot -->
+    <circle cx="32" cy="18" r="5" fill="#FFFFFF" />
+
+    <!-- Center Division Bar -->
+    <rect x="14" y="28" width="36" height="8" rx="4" fill="#FFFFFF" />
+
+    <!-- Bottom Dot -->
+    <circle cx="32" cy="46" r="5" fill="#FFFFFF" />
+  </g>
+</svg>
