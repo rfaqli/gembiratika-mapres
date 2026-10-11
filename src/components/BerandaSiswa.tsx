@@ -175,13 +175,13 @@ export function BerandaSiswa() {
         </div>
       </section>
 
-      {/* 3. Toggles & Sliders Bar (Direct Match to User's Uploaded Neumorphism UI Example!) */}
+      {/* 3. Toggles & Sliders Bar */}
       <section className="neu-raised p-6 sm:p-8 rounded-3xl space-y-6">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-lg font-black text-[#2A3647] flex items-center gap-2">
               <Sliders className="w-5 h-5 text-[#3F8F54]" />
-              Pengaturan Pendampingan Belajar (Kontrol Skeuomorfik)
+              Pengaturan Pendampingan Belajar
             </h2>
             <p className="text-xs text-[#6B7C93]">
               Kustomisasi kenyamanan belajar dengan tombol toggle taktil dan slider halus
@@ -221,22 +221,39 @@ export function BerandaSiswa() {
             </div>
           </div>
 
-          {/* Slider: Target Durasi Sesi Belajar */}
-          <div className="neu-btn p-4 rounded-2xl space-y-2">
+          {/* Slider: Target Durasi Sesi Belajar (Smooth Continuous Drag) */}
+          <div className="neu-btn p-4 rounded-2xl space-y-3">
             <div className="flex items-center justify-between text-xs">
               <span className="font-black text-[#2A3647]">Target Sesi Harian:</span>
-              <span className="neu-inset-sm px-2 py-0.5 font-black text-[#FF7043]">{sessionTargetMinutes} Menit</span>
+              <span className="neu-inset-sm px-2.5 py-0.5 font-black text-[#FF7043]">{sessionTargetMinutes} Menit</span>
             </div>
             
-            <div className="neu-slider-track">
+            <div className="relative py-2 flex items-center select-none group">
+              {/* Sunken Neumorphic Track */}
+              <div className="neu-slider-track w-full overflow-hidden pointer-events-none">
+                <div 
+                  className="neu-slider-fill transition-all duration-75 ease-out" 
+                  style={{ width: `${((sessionTargetMinutes - 15) / (60 - 15)) * 100}%` }}
+                />
+              </div>
+
+              {/* 3D Extruded Neumorphic Thumb */}
               <div 
-                className="neu-slider-fill" 
-                style={{ width: `${(sessionTargetMinutes / 60) * 100}%` }}
+                className="neu-slider-thumb pointer-events-none transition-all duration-75 ease-out group-active:scale-105"
+                style={{ 
+                  left: `calc(${((sessionTargetMinutes - 15) / (60 - 15)) * 100}% - 14px)` 
+                }}
               />
-              <div 
-                className="neu-slider-thumb cursor-pointer"
-                style={{ left: `calc(${(sessionTargetMinutes / 60) * 100}% - 14px)` }}
-                onClick={() => setSessionTargetMinutes(prev => (prev >= 50 ? 20 : prev + 10))}
+
+              {/* Smooth HTML5 Range Input Overlay */}
+              <input
+                type="range"
+                min={15}
+                max={60}
+                step={1}
+                value={sessionTargetMinutes}
+                onChange={(e) => setSessionTargetMinutes(Number(e.target.value))}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
               />
             </div>
           </div>

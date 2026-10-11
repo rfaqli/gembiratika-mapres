@@ -46,34 +46,33 @@ export default function App() {
         </main>
       </div>
 
-      {/* Warm Skeuomorphic Footer */}
-      <footer className="bg-[#EFE7D8] border-t-2 border-[#DCD0BA] py-8 text-xs text-[#6C5E4A]">
+      {/* Soft Neumorphic Footer */}
+      <footer className="border-t border-white/60 py-8 text-xs text-[#64748B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="text-2xl">🌿</span>
+              <div className="neu-circle-btn w-10 h-10 text-xl">🌿</div>
               <div>
-                <span className="font-extrabold text-sm text-[#2C2416] font-serif block">GEMBIRATIKA</span>
-                <span className="text-[11px] text-[#7A6E5D]">
+                <span className="font-black text-sm text-[#2A3647] font-serif block">GEMBIRATIKA</span>
+                <span className="text-[11px] text-[#8494A8]">
                   Platform Belajar Matematika SMP Kelas VIII • Gamifikasi Adaptif &amp; Refleksi Regulasi Diri
                 </span>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-[#5D4E3A]">
-              <span className="flex items-center gap-1">
-                <ShieldCheck className="w-4 h-4 text-[#5D7A4A]" />
+            <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-[#475569]">
+              <span className="neu-btn px-3 py-1.5 flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#3F8F54]" />
                 Privasi Terlindungi (UU PDP No. 27/2022)
               </span>
-              <span>•</span>
-              <span className="flex items-center gap-1">
-                <Heart className="w-4 h-4 text-[#C26757]" />
+              <span className="neu-btn px-3 py-1.5 flex items-center gap-1.5">
+                <Heart className="w-3.5 h-3.5 text-[#FF7043]" />
                 Ruang Belajar Ramah Anak
               </span>
             </div>
           </div>
 
-          <div className="border-t border-[#DFD3BE] pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#8A7C6B]">
+          <div className="border-t border-[#DCE4ED] pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#8494A8]">
             <p>© 2026 GEMBIRATIKA Indonesia. Dikembangkan untuk kemajuan literasi numerasi anak bangsa.</p>
             <p>Dioptimalkan untuk browser ponsel &amp; koneksi jaringan sekolah.</p>
           </div>
